@@ -1,16 +1,9 @@
-# Core
-fastapi==0.101.1
-uvicorn[standard]==0.23.2
-python-3.11.8
-
-# Data & ML
-pandas==1.5.3
-numpy==1.24.4
-scikit-learn==1.2.2
-matplotlib==3.7.2
-seaborn==0.12.2
-
-requests==2.32.4
-
+fastapi
+uvicorn[standard]
+pandas
+scikit-learn
+joblib
+numpy
+python-multipart
 
 

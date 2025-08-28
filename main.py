@@ -24,6 +24,10 @@ SCALER_PATH = os.path.join(BASE_DIR, "scaler.sav")
 model = joblib.load(MODEL_PATH)
 scaler = joblib.load(SCALER_PATH)
 
+@app.get("/")
+def bienvenu():
+    return {"message": "Bienvenue sur l'API de prédiction de faux billets"}
+
 @app.post("/predict")
 async def fichier_csv(file: UploadFile = File(...), separateur: str = Form(...)):
     content = await file.read()
@@ -55,3 +59,4 @@ async def fichier_csv(file: UploadFile = File(...), separateur: str = Form(...))
     
 
     return {"resultat": df[["prediction","probabilite"]].to_dict(orient="records")}
+
